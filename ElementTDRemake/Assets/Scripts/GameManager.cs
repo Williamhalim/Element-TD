@@ -3,10 +3,23 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
+	public static GameManager instance;
+
 	public static bool GameIsOver;
 
 	public GameObject gameOverUI;
 	public GameObject completeLevelUI;
+	public GameObject elementsUnlockedUI;
+
+	void Awake ()
+	{
+		if (instance != null)
+		{
+			Debug.LogError("More than one GameManager in scene!");
+			return;
+		}
+		instance = this;
+	}
 
 	void Start ()
 	{

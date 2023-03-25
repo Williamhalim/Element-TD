@@ -26,7 +26,9 @@ public class EnemyMovement : MonoBehaviour {
 			GetNextWaypoint();
 		}
 
+		// To set speed and rotation to default at update, as a way to naturally clear debuffs
 		enemy.speed = enemy.startSpeed;
+		transform.rotation = Quaternion.identity;
 	}
 
 	void GetNextWaypoint()

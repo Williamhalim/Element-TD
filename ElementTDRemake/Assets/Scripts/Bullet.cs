@@ -33,14 +33,20 @@ public class Bullet : MonoBehaviour {
 			HitTarget();
 			return;
 		}
-
+			
 		transform.Translate(dir.normalized * distanceThisFrame, Space.World);
 		transform.LookAt(target);
-
 	}
 
 	void HitTarget ()
 	{
+		if (this.tag == "SupportBullet") {
+			Rigidbody rb = gameObject.GetComponent<Rigidbody>();
+			rb.velocity = Vector3.zero;
+			rb.angularVelocity = Vector3.zero;
+			Destroy (this);
+			return;
+		}
 		GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
 		Destroy(effectIns, 5f);
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NodeUI : MonoBehaviour {
+public class NodeUIUpgrade : MonoBehaviour {
 
 	public GameObject ui;
 
@@ -36,6 +36,10 @@ public class NodeUI : MonoBehaviour {
 	public void Hide ()
 	{
 		ui.SetActive(false);
+	}
+
+	public void Build(){
+		
 	}
 
 	public void Upgrade ()

@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224232697957655722}
   - component: {fileID: 222423293156922268}
   - component: {fileID: 114502919066394640}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 224672580738574834}
   - component: {fileID: 222135369286360210}
   - component: {fileID: 114256610062968284}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 23843884091405016}
   - component: {fileID: 114724708547027464}
   - component: {fileID: 114963656151396666}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_Boss_LV1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 223584989585761668}
   - component: {fileID: 114026723998495340}
   - component: {fileID: 114858543433786040}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

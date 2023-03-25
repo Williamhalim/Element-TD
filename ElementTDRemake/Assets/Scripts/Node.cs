@@ -4,10 +4,8 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour {
 
 	public Color hoverColor;
-	public Color notEnoughMoneyColor;
     public Vector3 positionOffset;
 
-	[HideInInspector]
 	public GameObject turret;
 	[HideInInspector]
 	public TurretBlueprint turretBlueprint;
@@ -32,24 +30,32 @@ public class Node : MonoBehaviour {
 		return transform.position + positionOffset;
 	}
 
+	void OnMouseEnter ()
+	{
+		if (EventSystem.current.IsPointerOverGameObject())
+			return;
+
+		rend.material.color = hoverColor;
+	}
+
+	void OnMouseExit ()
+	{
+		rend.material.color = startColor;
+	}
+
 	void OnMouseDown ()
 	{
 		if (EventSystem.current.IsPointerOverGameObject())
 			return;
 
-		if (turret != null)
+		if (turret == null)
 		{
 			buildManager.SelectNode(this);
 			return;
 		}
-
-		if (!buildManager.CanBuild)
-			return;
-
-		BuildTurret(buildManager.GetTurretToBuild());
 	}
 
-	void BuildTurret (TurretBlueprint blueprint)
+	public void BuildTurret (TurretBlueprint blueprint)
 	{
 		if (PlayerStats.Money < blueprint.cost)
 		{
@@ -67,7 +73,7 @@ public class Node : MonoBehaviour {
 		GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
 		Destroy(effect, 5f);
 
-		Debug.Log("Turret build!");
+		Debug.Log("Turret built!");
 	}
 
 	public void UpgradeTurret ()
@@ -105,28 +111,5 @@ public class Node : MonoBehaviour {
 		Destroy(turret);
 		turretBlueprint = null;
 	}
-
-	void OnMouseEnter ()
-	{
-		if (EventSystem.current.IsPointerOverGameObject())
-			return;
-
-		if (!buildManager.CanBuild)
-			return;
-
-		if (buildManager.HasMoney)
-		{
-			rend.material.color = hoverColor;
-		} else
-		{
-			rend.material.color = notEnoughMoneyColor;
-		}
-
-	}
-
-	void OnMouseExit ()
-	{
-		rend.material.color = startColor;
-    }
-
+		
 }

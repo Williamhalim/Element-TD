@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 23438724163461508}
   - component: {fileID: 114874702042085240}
   - component: {fileID: 114270506294375836}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy_Tough_LV2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 224827506487613016}
   - component: {fileID: 222239797025162024}
   - component: {fileID: 114179091547669486}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 223506414186457928}
   - component: {fileID: 114890285888183938}
   - component: {fileID: 114865943979883224}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 224276620927886454}
   - component: {fileID: 222957461642424364}
   - component: {fileID: 114517434301529850}
-  m_Layer: 5
+  m_Layer: 9
   m_Name: HealthBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}

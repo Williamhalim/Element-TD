@@ -24,6 +24,9 @@ public class Enemy : MonoBehaviour {
 	{
 		speed = startSpeed;
 		health = startHealth;
+
+		int enemyLayer = LayerMask.NameToLayer ("Enemy");
+		Physics.IgnoreLayerCollision (enemyLayer, enemyLayer);
 	}
 
 	public void TakeDamage (float amount)
