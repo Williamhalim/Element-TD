@@ -29,6 +29,10 @@ public class BuildManager : MonoBehaviour {
 	public Button waterTurretButton;
 	public Button earthTurretButton;	
 	public Button windTurretButton;
+	public Button metalTurretButton;
+	public Button lightningTurretButton;
+	public Button woodTurretButton;
+	public Button iceTurretButton;
 
 	public void SelectNode (Node node)
 	{
@@ -71,6 +75,23 @@ public class BuildManager : MonoBehaviour {
 	public void UnlockWindButton()
 	{
 		windTurretButton.interactable = true;
+	}
+
+	public void UnlockMetalButton()
+	{
+		metalTurretButton.interactable = true;
+	}
+	public void UnlockLightningButton()
+	{
+		lightningTurretButton.interactable = true;
+	}
+	public void UnlockWoodButton()
+	{
+		woodTurretButton.interactable = true;
+	}
+	public void UnlockIceButton()
+	{
+		iceTurretButton.interactable = true;
 	}
 
 }

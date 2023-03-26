@@ -11,6 +11,11 @@ public class Shop : MonoBehaviour {
 	public TurretBlueprint earthTurret;
 	public TurretBlueprint windTurret;
 
+	public TurretBlueprint metalTurret;
+	public TurretBlueprint lightningTurret;
+	public TurretBlueprint woodTurret;
+	public TurretBlueprint iceTurret;
+
 	BuildManager buildManager;
 
 	void Start(){
@@ -43,6 +48,26 @@ public class Shop : MonoBehaviour {
 
 	public void SelectWindTurret (){
 		buildManager.SelectTurretToBuild(windTurret);
+	}
+
+	public void SelectMetalTurret()
+	{
+		buildManager.SelectTurretToBuild(metalTurret);
+	}
+
+	public void SelectLightningTurret()
+	{
+		buildManager.SelectTurretToBuild(lightningTurret);
+	}
+
+	public void SelectWoodTurret()
+	{
+		buildManager.SelectTurretToBuild(woodTurret);
+	}
+
+	public void SelectIceTurret()
+	{
+		buildManager.SelectTurretToBuild(iceTurret);
 	}
 
 	public void UnlockFireElement(){
