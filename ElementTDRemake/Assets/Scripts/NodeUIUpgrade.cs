@@ -15,17 +15,7 @@ public class NodeUIUpgrade : MonoBehaviour {
 		target = _target;
 
 		transform.position = target.GetBuildPosition();
-
-		if (!target.isUpgraded)
-		{
-			upgradeButton.interactable = true;
-		} else
-		{
-			upgradeButton.interactable = false;
-		}
-
 		sellAmount.text = "$" + target.turretBlueprint.GetSellAmount();
-		Debug.Log(ui.name);
 		ui.SetActive(true);
 	}
 
@@ -42,12 +32,14 @@ public class NodeUIUpgrade : MonoBehaviour {
 	{
 		target.UpgradeTurret();
 		BuildManager.instance.DeselectNode();
+		BuildManager.instance.DeselectNodeForUpgrade();
 	}
 
 	public void Sell ()
 	{
 		target.SellTurret();
 		BuildManager.instance.DeselectNode();
+		BuildManager.instance.DeselectNodeForUpgrade();
 	}
 
 }

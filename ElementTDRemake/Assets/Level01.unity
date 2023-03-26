@@ -282,23 +282,26 @@ MonoBehaviour:
     upgradedPrefab: {fileID: 0}
     upgradeCost: 400
   metalTurret:
-    prefab: {fileID: 0}
-    cost: 0
+    prefab: {fileID: 174700, guid: 42ade8c592e284c4d8c8823db69cfdc9, type: 3}
+    cost: 330
     upgradedPrefab: {fileID: 0}
     upgradeCost: 0
   lightningTurret:
-    prefab: {fileID: 0}
-    cost: 0
+    prefab: {fileID: 7141196976684260028, guid: ebbccaceb767dc94f825bd4780ae583c,
+      type: 3}
+    cost: 330
     upgradedPrefab: {fileID: 0}
     upgradeCost: 0
   woodTurret:
-    prefab: {fileID: 0}
-    cost: 0
+    prefab: {fileID: 3049604662695880419, guid: 633442d63af8039499c66d5f3a462a4c,
+      type: 3}
+    cost: 330
     upgradedPrefab: {fileID: 0}
     upgradeCost: 0
   iceTurret:
-    prefab: {fileID: 0}
-    cost: 0
+    prefab: {fileID: 6418629280400184799, guid: 549a0299c2e1df1428856f99d62ca203,
+      type: 3}
+    cost: 330
     upgradedPrefab: {fileID: 0}
     upgradeCost: 0
 --- !u!1 &10531147
@@ -546,7 +549,12 @@ PrefabInstance:
     - target: {fileID: 114000012886188232, guid: 63a6c71d72c052545ad6b59fa916856f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectWindTurret
+      value: SelectIceTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012886188232, guid: 63a6c71d72c052545ad6b59fa916856f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 114000013560697468, guid: 63a6c71d72c052545ad6b59fa916856f,
         type: 3}
@@ -5350,7 +5358,12 @@ PrefabInstance:
     - target: {fileID: 114000012886188232, guid: 63a6c71d72c052545ad6b59fa916856f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectEarthTurret
+      value: SelectWoodTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012886188232, guid: 63a6c71d72c052545ad6b59fa916856f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 114000013560697468, guid: 63a6c71d72c052545ad6b59fa916856f,
         type: 3}
@@ -5526,7 +5539,7 @@ PrefabInstance:
     - target: {fileID: 114000012886188232, guid: 63a6c71d72c052545ad6b59fa916856f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectFireTurret
+      value: SelectMetalTurret
       objectReference: {fileID: 0}
     - target: {fileID: 114000012886188232, guid: 63a6c71d72c052545ad6b59fa916856f,
         type: 3}
@@ -11527,7 +11540,12 @@ PrefabInstance:
     - target: {fileID: 114000012886188232, guid: 63a6c71d72c052545ad6b59fa916856f,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectWaterTurret
+      value: SelectLightningTurret
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000012886188232, guid: 63a6c71d72c052545ad6b59fa916856f,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Shop, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 114000013560697468, guid: 63a6c71d72c052545ad6b59fa916856f,
         type: 3}
@@ -20106,7 +20124,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Highlighted
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1850547941}
   m_OnClick:
     m_PersistentCalls:

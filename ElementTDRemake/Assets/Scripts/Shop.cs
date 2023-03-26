@@ -75,6 +75,7 @@ public class Shop : MonoBehaviour {
 		PlayerStats.Money -= 500;
 		buildManager.UnlockFireButton();
 		GameManager.instance.elementsUnlockedUI.transform.GetChild (0).gameObject.SetActive (true);
+		CheckForUnlockedSpecialElement();
 	}
 
 	public void UnlockWaterElement(){
@@ -82,6 +83,7 @@ public class Shop : MonoBehaviour {
 		PlayerStats.Money -= 500;
 		buildManager.UnlockWaterButton();
 		GameManager.instance.elementsUnlockedUI.transform.GetChild (1).gameObject.SetActive (true);
+		CheckForUnlockedSpecialElement();
 	}
 
 	public void UnlockEarthElement(){
@@ -89,6 +91,7 @@ public class Shop : MonoBehaviour {
 		PlayerStats.Money -= 500;
 		buildManager.UnlockEarthButton();
 		GameManager.instance.elementsUnlockedUI.transform.GetChild (2).gameObject.SetActive (true);
+		CheckForUnlockedSpecialElement();
 	}
 
 	public void UnlockWindElement(){
@@ -96,6 +99,33 @@ public class Shop : MonoBehaviour {
 		PlayerStats.Money -= 500;
 		buildManager.UnlockWindButton();
 		GameManager.instance.elementsUnlockedUI.transform.GetChild (3).gameObject.SetActive (true);
+		CheckForUnlockedSpecialElement();
+	}
+
+	public void CheckForUnlockedSpecialElement() {
+		if (PlayerStats.fireUnlocked && PlayerStats.earthUnlocked) { 
+			PlayerStats.metalUnlocked = true;
+			buildManager.UnlockMetalButton();
+			buildManager.nodeUIUpgrade.upgradeButton.interactable = true;
+		}
+
+		if (PlayerStats.fireUnlocked && PlayerStats.windUnlocked) {
+			PlayerStats.lightningUnlocked = true;
+			buildManager.UnlockLightningButton();
+			buildManager.nodeUIUpgrade.upgradeButton.interactable = true;
+		}
+		
+		if (PlayerStats.waterUnlocked && PlayerStats.earthUnlocked) {
+			PlayerStats.woodUnlocked = true;
+			buildManager.UnlockWoodButton();
+			buildManager.nodeUIUpgrade.upgradeButton.interactable = true;
+		}
+		
+		if (PlayerStats.waterUnlocked && PlayerStats.windUnlocked) {
+			PlayerStats.iceUnlocked = true;
+			buildManager.UnlockIceButton();
+			buildManager.nodeUIUpgrade.upgradeButton.interactable = true;
+		}	
 	}
 
 }

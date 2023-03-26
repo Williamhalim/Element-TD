@@ -48,16 +48,11 @@ public class Node : MonoBehaviour {
 		if (EventSystem.current.IsPointerOverGameObject())
 			return;
 
-		if (turret == null)
-		{
-			buildManager.SelectNode(this);
-			return;
-		}
-		else {
-//			if (specialTowersAvailable) {
-				buildManager.SelectNodeForUpgrade(this);
-//			}
-		}
+		if (turret == null) buildManager.SelectNode(this);
+		else buildManager.SelectNodeForUpgrade(this);
+
+		return;
+		
 	}
 
 	public void BuildTurret (TurretBlueprint blueprint)
