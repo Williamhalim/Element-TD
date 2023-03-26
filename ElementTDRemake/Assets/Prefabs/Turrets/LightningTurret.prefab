@@ -79,7 +79,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7140202861276611308
 Transform:
   m_ObjectHideFlags: 0
@@ -4900,7 +4900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 50
-  bulletPrefab: {fileID: 185070, guid: 085647db17acfbb4292fe73ed9171486, type: 3}
+  bulletPrefab: {fileID: 185070, guid: 578b4c42197b3bb4f913c04334e0b1e9, type: 3}
   fireRate: 1
   useLaser: 0
   damageOverTime: 30
