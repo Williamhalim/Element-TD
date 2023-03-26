@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour {
 	public Image healthBar;
 
 	private bool isDead = false;
+	public bool isFrozen;
 
 	void Start ()
 	{
@@ -41,6 +42,18 @@ public class Enemy : MonoBehaviour {
 		}
 	}
 
+	public void TakeDamage(float amount, bool isLifeAbsorption)
+	{
+		health -= amount;
+
+		healthBar.fillAmount = health / startHealth;
+
+		if (health <= 0 && !isDead && isLifeAbsorption)
+		{
+			Die();
+		}
+	}
+
 	public void Slow (float pct)
 	{
 		speed = startSpeed * (1f - pct);
@@ -56,6 +69,9 @@ public class Enemy : MonoBehaviour {
 		Destroy(effect, 5f);
 
 		WaveSpawner.EnemiesAlive--;
+
+		PlayerStats.Lives++;
+		Debug.Log("Life point added");
 
 		Destroy(gameObject);
 	}

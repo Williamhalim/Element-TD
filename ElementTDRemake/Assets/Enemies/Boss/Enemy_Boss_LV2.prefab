@@ -213,8 +213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startSpeed: 5
   speed: 10
-  startHealth: 4000
-  worth: 800
+  startHealth: 5000
+  worth: 1600
   deathEffect: {fileID: 1000010680075956, guid: 92c2a29e979c32b4e9671af816026d28,
     type: 3}
   healthBar: {fileID: 114433636541044548}

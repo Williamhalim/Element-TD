@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 114000011498150162}
   m_Layer: 0
   m_Name: Lumbercannon
-  m_TagString: Untagged
+  m_TagString: WoodBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de6187ba8392ac747893314cfc859468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
   speed: 15
   damage: 75
   explosionRadius: 1

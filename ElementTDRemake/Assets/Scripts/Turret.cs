@@ -15,12 +15,11 @@ public class Turret : MonoBehaviour {
 	public float fireRate = 1f;
 	private float fireCountdown = 0f;
 
-	[Header("Use Laser")]
+	[Header("Use Slower Functions")]
 	public bool useLaser = false;
-
+	public bool useFreeze = false;
 	public int damageOverTime = 30;
 	public float slowAmount = .5f;
-
 	public LineRenderer lineRenderer;
 	public ParticleSystem impactEffect;
 	public Light impactLight;
@@ -89,6 +88,13 @@ public class Turret : MonoBehaviour {
 			Laser();
 		} else
 		{
+			if (useFreeze) {
+				if (!targetEnemy.isFrozen) {
+					targetEnemy.Slow(slowAmount);
+					StartCoroutine(Freeze());
+				}
+			} 
+
 			if (fireCountdown <= 0f)
 			{
 				Shoot();
@@ -137,6 +143,14 @@ public class Turret : MonoBehaviour {
 
 		if (bullet != null)
 			bullet.Seek(target);
+	}
+
+	IEnumerator Freeze() {
+		yield return new WaitForSeconds(1.25f);
+		targetEnemy.Slow(1f);
+		targetEnemy.isFrozen = true;
+		yield return new WaitForSeconds(3f);
+		targetEnemy.isFrozen = false;
 	}
 
 	void OnDrawGizmosSelected ()

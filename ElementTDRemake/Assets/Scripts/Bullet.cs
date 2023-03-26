@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour {
 
-	private Transform target;
+	public Transform target;
 
 	public float speed = 70f;
 
@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour {
 		transform.LookAt(target);
 	}
 
-	void HitTarget ()
+	public void HitTarget ()
 	{
 		if (this.tag == "SupportBullet") {
 			Rigidbody rb = gameObject.GetComponent<Rigidbody>();
@@ -47,6 +47,13 @@ public class Bullet : MonoBehaviour {
 			Destroy (this);
 			return;
 		}
+
+		if (this.gameObject.tag == "WoodBullet")
+		{
+			// true: isLifeAbsorption
+			Damage(target, true);
+		}
+
 		GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
 		Destroy(effectIns, 5f);
 
@@ -80,6 +87,16 @@ public class Bullet : MonoBehaviour {
 		if (e != null)
 		{
 			e.TakeDamage(damage);
+		}
+	}
+
+	void Damage(Transform enemy, bool isLifeAbsorption)
+	{
+		Enemy e = enemy.GetComponent<Enemy>();
+
+		if (e != null)
+		{
+			e.TakeDamage(damage, isLifeAbsorption);
 		}
 	}
 

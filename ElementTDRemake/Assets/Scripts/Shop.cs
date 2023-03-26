@@ -6,6 +6,8 @@ public class Shop : MonoBehaviour {
 	public TurretBlueprint missileLauncher;
 	public TurretBlueprint laserBeamer;
 
+	public static int elementUnlockCost = 1000;
+
 	public TurretBlueprint fireTurret;
 	public TurretBlueprint waterTurret;
 	public TurretBlueprint earthTurret;
@@ -72,7 +74,7 @@ public class Shop : MonoBehaviour {
 
 	public void UnlockFireElement(){
 		PlayerStats.fireUnlocked = true;
-		PlayerStats.Money -= 500;
+		PlayerStats.Money -= elementUnlockCost;
 		buildManager.UnlockFireButton();
 		GameManager.instance.elementsUnlockedUI.transform.GetChild (0).gameObject.SetActive (true);
 		CheckForUnlockedSpecialElement();
@@ -80,7 +82,7 @@ public class Shop : MonoBehaviour {
 
 	public void UnlockWaterElement(){
 		PlayerStats.waterUnlocked = true;
-		PlayerStats.Money -= 500;
+		PlayerStats.Money -= elementUnlockCost;
 		buildManager.UnlockWaterButton();
 		GameManager.instance.elementsUnlockedUI.transform.GetChild (1).gameObject.SetActive (true);
 		CheckForUnlockedSpecialElement();
@@ -88,7 +90,7 @@ public class Shop : MonoBehaviour {
 
 	public void UnlockEarthElement(){
 		PlayerStats.earthUnlocked = true;
-		PlayerStats.Money -= 500;
+		PlayerStats.Money -= elementUnlockCost;
 		buildManager.UnlockEarthButton();
 		GameManager.instance.elementsUnlockedUI.transform.GetChild (2).gameObject.SetActive (true);
 		CheckForUnlockedSpecialElement();
@@ -96,7 +98,7 @@ public class Shop : MonoBehaviour {
 
 	public void UnlockWindElement(){
 		PlayerStats.windUnlocked = true;
-		PlayerStats.Money -= 500;
+		PlayerStats.Money -= elementUnlockCost;
 		buildManager.UnlockWindButton();
 		GameManager.instance.elementsUnlockedUI.transform.GetChild (3).gameObject.SetActive (true);
 		CheckForUnlockedSpecialElement();

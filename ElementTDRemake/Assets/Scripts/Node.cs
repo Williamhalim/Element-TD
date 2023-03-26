@@ -78,15 +78,19 @@ public class Node : MonoBehaviour {
 
 	public void UpgradeTurret (TurretBlueprint blueprint)
 	{
-		PlayerStats.Money -= turretBlueprint.upgradeCost;
+		if (PlayerStats.Money < blueprint.cost)
+		{
+			Debug.Log("Not enough money to upgrade!");
+			return;
+		}
 
+		PlayerStats.Money -= blueprint.cost;
 		//Get rid of the old turret
 		Debug.Log("Destroyed turrent: " + turret.name);
 		Destroy(turret);
 		BuildTurret(blueprint);
+		Debug.Log("Turret upgraded! Become >> " + turret.name);
 		isUpgraded = true;
-
-		Debug.Log("Turret upgraded!");
 	}
 
 	public void SellTurret ()
@@ -98,6 +102,7 @@ public class Node : MonoBehaviour {
 
 		Destroy(turret);
 		turretBlueprint = null;
+		isUpgraded = false;
 	}
 		
 }
