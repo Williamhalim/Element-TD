@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour {
 
@@ -23,6 +24,11 @@ public class BuildManager : MonoBehaviour {
 	public NodeUIBuild nodeUIBuild;
 	public NodeUIUpgrade nodeUIUpgrade;
 
+	[Header("For Inspector")]
+	public Button fireTurretButton;
+	public Button waterTurretButton;
+	public Button earthTurretButton;	
+	public Button windTurretButton;
 
 	public void SelectNode (Node node)
 	{
@@ -50,5 +56,21 @@ public class BuildManager : MonoBehaviour {
 	public TurretBlueprint GetTurretToBuild(){
 		return turretToBuild;
 	}
-		
+
+	public void UnlockFireButton() {
+		fireTurretButton.interactable = true;
+	}
+	public void UnlockWaterButton()
+	{
+		waterTurretButton.interactable = true;
+	}
+	public void UnlockEarthButton()
+	{
+		earthTurretButton.interactable = true;
+	}
+	public void UnlockWindButton()
+	{
+		windTurretButton.interactable = true;
+	}
+
 }
