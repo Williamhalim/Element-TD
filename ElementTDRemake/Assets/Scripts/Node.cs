@@ -73,23 +73,17 @@ public class Node : MonoBehaviour {
 		GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
 		Destroy(effect, 5f);
 
-		Debug.Log("Turret built!");
+		Debug.Log("Turret built! >> " + _turret.name);
 	}
 
-	public void UpgradeTurret ()
+	public void UpgradeTurret (TurretBlueprint blueprint)
 	{
 		PlayerStats.Money -= turretBlueprint.upgradeCost;
 
 		//Get rid of the old turret
+		Debug.Log("Destroyed turrent: " + turret.name);
 		Destroy(turret);
-
-		//Build a new one
-		GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradedPrefab, GetBuildPosition(), Quaternion.identity);
-		turret = _turret;
-
-		GameObject effect = (GameObject)Instantiate(buildManager.buildEffect, GetBuildPosition(), Quaternion.identity);
-		Destroy(effect, 5f);
-
+		BuildTurret(blueprint);
 		isUpgraded = true;
 
 		Debug.Log("Turret upgraded!");

@@ -71,14 +71,39 @@ public class BuildManager : MonoBehaviour {
 		nodeUIUpgrade.Hide();
 	}
 
+	public void DeselectNodeSpecialElements()
+	{
+		selectedNode = null;
+		nodeUISpecial.Hide();
+	}
+
 	public void SelectTurretToBuild (TurretBlueprint turret){
 		turretToBuild = turret;
-		selectedNode.BuildTurret(turretToBuild);
+		// If the turret is an upgrade, call UpgradeTurret() to ensure that the current turret is destroyed, and mark the node as upgraded
+		if (CheckForUpgradedTurret(turret)) selectedNode.UpgradeTurret(turretToBuild);
+		else selectedNode.BuildTurret(turretToBuild);
 		DeselectNode ();
+		DeselectNodeForUpgrade();
+		DeselectNodeSpecialElements();
+	}
+
+	public bool CheckForUpgradedTurret(TurretBlueprint turret) {
+		if (turret.prefab.name == "MetalTurret" ||
+			turret.prefab.name == "LightningTurret" ||
+			turret.prefab.name == "WoodTurret" ||
+			turret.prefab.name == "IceTurret") {
+			return true;
+		}
+		else return false;
 	}
 
 	public TurretBlueprint GetTurretToBuild(){
 		return turretToBuild;
+	}
+
+	public void UpgradeTurretSelection() {
+		nodeUIUpgrade.Hide();
+		nodeUISpecial.SetTarget(selectedNode);
 	}
 
 	public void UnlockFireButton() {

@@ -247,62 +247,68 @@ MonoBehaviour:
   standardTurret:
     prefab: {fileID: 174700, guid: 64f2ae8c83ee6bb49a47a2d3f43d307e, type: 3}
     cost: 100
-    upgradedPrefab: {fileID: 174700, guid: af7198115d2e53d48a7310dc6579fdfe, type: 3}
+    upgradedPrefab: []
     upgradeCost: 150
   missileLauncher:
     prefab: {fileID: 1000010346017410, guid: 28886474c13dfff4cb183350df126081, type: 3}
     cost: 150
-    upgradedPrefab: {fileID: 1000010346017410, guid: 45e67aee8990d9642b349d207af550ee,
-      type: 3}
+    upgradedPrefab: []
     upgradeCost: 250
   laserBeamer:
     prefab: {fileID: 1000013152263656, guid: c51804966ab0f8544b70b0e9dcae1623, type: 3}
     cost: 250
-    upgradedPrefab: {fileID: 1000013152263656, guid: d1a44c91881cde9468c03bf6f05718f7,
-      type: 3}
+    upgradedPrefab: []
     upgradeCost: 375
   fireTurret:
     prefab: {fileID: 174700, guid: 197ec16631173a44b9f8423aae4108ca, type: 3}
     cost: 200
-    upgradedPrefab: {fileID: 0}
+    upgradedPrefab:
+    - {fileID: 174700, guid: 42ade8c592e284c4d8c8823db69cfdc9, type: 3}
+    - {fileID: 7141196976684260028, guid: ebbccaceb767dc94f825bd4780ae583c, type: 3}
     upgradeCost: 400
   waterTurret:
     prefab: {fileID: 1384500607760620, guid: c6861136b21f7904ea58515b164c1105, type: 3}
     cost: 200
-    upgradedPrefab: {fileID: 0}
+    upgradedPrefab:
+    - {fileID: 3049604662695880419, guid: 633442d63af8039499c66d5f3a462a4c, type: 3}
+    - {fileID: 6418629280400184799, guid: 549a0299c2e1df1428856f99d62ca203, type: 3}
     upgradeCost: 400
   earthTurret:
     prefab: {fileID: 174700, guid: fdd236963ecd3eb47b61f2601a2fa619, type: 3}
     cost: 200
-    upgradedPrefab: {fileID: 0}
+    upgradedPrefab:
+    - {fileID: 174700, guid: 42ade8c592e284c4d8c8823db69cfdc9, type: 3}
+    - {fileID: 3049604662695880419, guid: 633442d63af8039499c66d5f3a462a4c, type: 3}
     upgradeCost: 400
   windTurret:
     prefab: {fileID: 174700, guid: a30350f9278a5024baa377fa5b4cc249, type: 3}
     cost: 200
-    upgradedPrefab: {fileID: 0}
+    upgradedPrefab:
+    - {fileID: 7141196976684260028, guid: ebbccaceb767dc94f825bd4780ae583c, type: 3}
+    - {fileID: 6418629280400184799, guid: 549a0299c2e1df1428856f99d62ca203, type: 3}
     upgradeCost: 400
   metalTurret:
     prefab: {fileID: 174700, guid: 42ade8c592e284c4d8c8823db69cfdc9, type: 3}
     cost: 330
-    upgradedPrefab: {fileID: 0}
+    upgradedPrefab: []
     upgradeCost: 0
   lightningTurret:
     prefab: {fileID: 7141196976684260028, guid: ebbccaceb767dc94f825bd4780ae583c,
       type: 3}
     cost: 330
-    upgradedPrefab: {fileID: 0}
+    upgradedPrefab: []
     upgradeCost: 0
   woodTurret:
     prefab: {fileID: 3049604662695880419, guid: 633442d63af8039499c66d5f3a462a4c,
       type: 3}
     cost: 330
-    upgradedPrefab: {fileID: 0}
+    upgradedPrefab: []
     upgradeCost: 0
   iceTurret:
     prefab: {fileID: 6418629280400184799, guid: 549a0299c2e1df1428856f99d62ca203,
       type: 3}
     cost: 330
-    upgradedPrefab: {fileID: 0}
+    upgradedPrefab: []
     upgradeCost: 0
 --- !u!1 &10531147
 GameObject:
@@ -20129,9 +20135,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1590623342}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: Upgrade
+      - m_Target: {fileID: 196616389}
+        m_TargetAssemblyTypeName: BuildManager, Assembly-CSharp
+        m_MethodName: UpgradeTurretSelection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

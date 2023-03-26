@@ -28,13 +28,6 @@ public class NodeUIUpgrade : MonoBehaviour {
 		
 	}
 
-	public void Upgrade ()
-	{
-		target.UpgradeTurret();
-		BuildManager.instance.DeselectNode();
-		BuildManager.instance.DeselectNodeForUpgrade();
-	}
-
 	public void Sell ()
 	{
 		target.SellTurret();
