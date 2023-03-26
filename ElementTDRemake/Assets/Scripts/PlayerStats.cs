@@ -14,6 +14,11 @@ public class PlayerStats : MonoBehaviour {
 	public static bool earthUnlocked;
 	public static bool windUnlocked;
 
+	public static bool metalUnlocked;
+	public static bool lightningUnlocked;
+	public static bool woodUnlocked;
+	public static bool iceUnlocked;
+
 	public static int Rounds;
 
 	void Start ()
