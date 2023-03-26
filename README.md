@@ -1,12 +1,24 @@
-How to make a Tower Defense Game in Unity 
+A remake and my own take of ElementTD
 ========
-
-Learn how to make a 3D Tower Defence Game using Unity. All code is written entirely in C#.
-
-Watch the videos [HERE](https://www.youtube.com/playlist?list=PLPV2KyIb3jR4u5jX8za5iU1cqnQPmbzG0).
-
-###Software
-- This project runs on the [Unity](http://unity3d.com) engine. Make sure to have the newest version installed before running the project. The project folder is called "Tower Defense Unity Project".
-
-###Copyright
-This project is released into the public domain. For more information see LICENSE.
+<br>
+Unlock elemental towers and combine two different elements to get special towers.
+<br>
+The characteristics of each elements:
+<br>
+Fire: Splash damage
+<br>
+Water: Slow
+<br>
+Earth: Blocking enemies
+<br>
+Wind: Crowd control
+<br>
+<br>
+Fire + Earth = Metal: High single target damage
+<br>
+Fire + Wind = Lightning : Long range
+<br>
+Water + Earth = Wood: Gain life for kills
+<br>
+Water + Wind = Ice: Freeze
+<br>
