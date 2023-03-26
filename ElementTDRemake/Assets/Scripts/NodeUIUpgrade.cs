@@ -4,8 +4,6 @@ using UnityEngine.UI;
 public class NodeUIUpgrade : MonoBehaviour {
 
 	public GameObject ui;
-
-	public Text upgradeCost;
 	public Button upgradeButton;
 
 	public Text sellAmount;
@@ -20,16 +18,14 @@ public class NodeUIUpgrade : MonoBehaviour {
 
 		if (!target.isUpgraded)
 		{
-			upgradeCost.text = "$" + target.turretBlueprint.upgradeCost;
 			upgradeButton.interactable = true;
 		} else
 		{
-			upgradeCost.text = "DONE";
 			upgradeButton.interactable = false;
 		}
 
 		sellAmount.text = "$" + target.turretBlueprint.GetSellAmount();
-
+		Debug.Log(ui.name);
 		ui.SetActive(true);
 	}
 

@@ -22,6 +22,7 @@ public class BuildManager : MonoBehaviour {
 	private Node selectedNode;
 
 	public NodeUIBuild nodeUIBuild;
+	public NodeUIBuild nodeUISpecial;
 	public NodeUIUpgrade nodeUIUpgrade;
 
 	[Header("For Inspector")]
@@ -44,11 +45,30 @@ public class BuildManager : MonoBehaviour {
 		selectedNode = node;
 		nodeUIBuild.SetTarget(node);
 	}
+	// Todo: DRY - Combine it with SelectNode() for cleaner code!
+	public void SelectNodeForUpgrade(Node node)
+	{
+		if (selectedNode == node)
+		{
+			DeselectNodeForUpgrade();
+			Debug.Log("Node deselected");
+			return;
+		}
+		selectedNode = node;
+		Debug.Log("Node selected");
+		nodeUIUpgrade.SetTarget(node);
+	}
 
 	public void DeselectNode()
 	{
 		selectedNode = null;
 		nodeUIBuild.Hide();
+	}
+
+	public void DeselectNodeForUpgrade()
+	{
+		selectedNode = null;
+		nodeUIUpgrade.Hide();
 	}
 
 	public void SelectTurretToBuild (TurretBlueprint turret){

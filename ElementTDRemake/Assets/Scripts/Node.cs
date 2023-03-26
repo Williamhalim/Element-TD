@@ -53,6 +53,11 @@ public class Node : MonoBehaviour {
 			buildManager.SelectNode(this);
 			return;
 		}
+		else {
+//			if (specialTowersAvailable) {
+				buildManager.SelectNodeForUpgrade(this);
+//			}
+		}
 	}
 
 	public void BuildTurret (TurretBlueprint blueprint)
@@ -78,12 +83,6 @@ public class Node : MonoBehaviour {
 
 	public void UpgradeTurret ()
 	{
-		if (PlayerStats.Money < turretBlueprint.upgradeCost)
-		{
-			Debug.Log("Not enough money to upgrade that!");
-			return;
-		}
-
 		PlayerStats.Money -= turretBlueprint.upgradeCost;
 
 		//Get rid of the old turret
