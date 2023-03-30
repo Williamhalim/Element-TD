@@ -37,9 +37,9 @@ public class BuildManager : MonoBehaviour {
 
 	public void SelectNode (Node node)
 	{
-		if (selectedNode == node)
+		if (selectedNode != null)
 		{
-			DeselectNode();
+			DeselectAllNodes();
 			return;
 		}
 		selectedNode = node;
@@ -48,9 +48,9 @@ public class BuildManager : MonoBehaviour {
 	// Todo: DRY - Combine it with SelectNode() for cleaner code!
 	public void SelectNodeForUpgrade(Node node)
 	{
-		if (selectedNode == node)
+		if (selectedNode != null)
 		{
-			DeselectNodeForUpgrade();
+			DeselectAllNodes();
 			Debug.Log("Node deselected");
 			return;
 		}
@@ -77,14 +77,18 @@ public class BuildManager : MonoBehaviour {
 		nodeUISpecial.Hide();
 	}
 
+	public void DeselectAllNodes() {
+		DeselectNode();
+		DeselectNodeForUpgrade();
+		DeselectNodeSpecialElements();
+	}
+
 	public void SelectTurretToBuild (TurretBlueprint turret){
 		turretToBuild = turret;
 		// If the turret is an upgrade, call UpgradeTurret() to ensure that the current turret is destroyed, and mark the node as upgraded
 		if (CheckForUpgradedTurret(turret)) selectedNode.UpgradeTurret(turretToBuild);
 		else selectedNode.BuildTurret(turretToBuild);
-		DeselectNode ();
-		DeselectNodeForUpgrade();
-		DeselectNodeSpecialElements();
+		DeselectAllNodes();
 	}
 
 	public bool CheckForUpgradedTurret(TurretBlueprint turret) {
